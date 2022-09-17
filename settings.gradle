@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidTest"
 include ':app'
+include ':domainLayer'
+include ':datalayer'
