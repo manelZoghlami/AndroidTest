@@ -7,5 +7,5 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [AppModule::class, UseCaseModule::class,
-    RepositoriesModule::class, DataBaseModule::class, ViewModelModule::class])
+    RepositoriesModule::class, DataBaseModule::class, ViewModelModule::class, NetworkModule::class])
 interface TestAppComponent :AppComponent

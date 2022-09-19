@@ -10,9 +10,7 @@ class WeatherCityRepositoryImpl(
 ) : WeatherCityRepository {
 
     override suspend fun getWeatherCity(lat: Double, lng: Double): List<WeatherCity> {
-
-        return weatherApi.getWeatherCity(lat, lng).currentJson.weatherJson.map {
-            it.toWeatherCity()
-        }
+        val response = weatherApi.getWeatherCity(lat, lng)
+        return response.body()?.currentJson?.weatherJson?.map { it.toWeatherCity() } ?: emptyList()
     }
 }

@@ -15,13 +15,11 @@ import javax.inject.Inject
 class WeatherCityFragment : Fragment() {
     private lateinit var binding: FragmentWeatherCityBinding
     @Inject
-    lateinit var WeatherCityViewModel: WeatherCityViewModel
-
+    lateinit var weatherCityViewModel: WeatherCityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector?.inject(this)
-
     }
 
     override fun onCreateView(
@@ -32,9 +30,16 @@ class WeatherCityFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        WeatherCityView(binding = binding,
+                        viewModel = weatherCityViewModel,
+                        owner = viewLifecycleOwner)
+
+    }
+
     companion object {
-        fun newInstance(param1: String, param2: String) =
-            WeatherCityFragment().apply {
-                            }
+        fun newInstance(lat: Double, lng: Double) =
+            WeatherCityFragment().apply {}
     }
 }

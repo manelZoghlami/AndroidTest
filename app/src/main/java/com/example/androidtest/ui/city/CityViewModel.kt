@@ -11,7 +11,6 @@ import kotlinx.coroutines.*
 
 class CityViewModel(private val getAllCityUseCase: GetAllCityUseCase) : ViewModel() {
 
-
     private val cityList = MutableLiveData<List<CityUI>>()
     val state: LiveData<List<CityUI>> = cityList
 
@@ -26,7 +25,6 @@ class CityViewModel(private val getAllCityUseCase: GetAllCityUseCase) : ViewMode
                 cityList.value = list.map { it.toCityUI() }
 
             }
-
         }
     }
 }
