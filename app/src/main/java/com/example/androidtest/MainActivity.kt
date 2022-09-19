@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
              if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.root_container, WeatherCityFragment.newInstance(0.0, 0.0))
+                .replace(R.id.root_container, WeatherCityFragment.newInstance("Paris"))
                 .commitAllowingStateLoss()
         }
     }

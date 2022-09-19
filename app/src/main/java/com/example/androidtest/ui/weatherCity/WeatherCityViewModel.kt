@@ -11,14 +11,14 @@ import kotlinx.coroutines.withContext
 
 class WeatherCityViewModel(private val weatherCityUseCase: WeatherCityUseCase) {
 
-    private val list = MutableLiveData<List<WeatherCityUI>>()
-    val state: LiveData<List<WeatherCityUI>> = list
+    private val list = MutableLiveData<CurrentWeatherUI>()
+    val state: LiveData<CurrentWeatherUI> = list
 
-    fun getWeatherCity(lat: Double, lng: Double) {
+    fun getWeatherCity(cityName: String) {
         CoroutineScope(Dispatchers.IO).launch {
-           val response = weatherCityUseCase.invoke(lat, lng)
+           val response = weatherCityUseCase.invoke(cityName)
             withContext(Dispatchers.Main) {
-            list.value = response.map { it.toUi() }
+            list.value = response.toCurrentWeatherUI()
             }
         }
     }

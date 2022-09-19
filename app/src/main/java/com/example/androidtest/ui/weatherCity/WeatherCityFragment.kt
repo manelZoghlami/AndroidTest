@@ -34,12 +34,17 @@ class WeatherCityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         WeatherCityView(binding = binding,
                         viewModel = weatherCityViewModel,
+                        name = arguments?.getString("city") ?:"",
                         owner = viewLifecycleOwner)
 
     }
 
     companion object {
-        fun newInstance(lat: Double, lng: Double) =
-            WeatherCityFragment().apply {}
+        fun newInstance(cityName: String) =
+            WeatherCityFragment().apply {
+                arguments = Bundle().apply {
+                   putString("city", cityName)
+                }
+            }
     }
 }

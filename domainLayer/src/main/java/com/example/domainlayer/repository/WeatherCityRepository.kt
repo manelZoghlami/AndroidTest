@@ -1,7 +1,7 @@
 package com.example.domainlayer.repository
 
-import com.example.domainlayer.models.WeatherCity
+import com.example.domainlayer.models.CurrentWeather
 
 interface WeatherCityRepository {
-    suspend fun getWeatherCity(lat: Double, lng: Double): List<WeatherCity>
+    suspend fun getWeatherCity(cityName: String): CurrentWeather
 }

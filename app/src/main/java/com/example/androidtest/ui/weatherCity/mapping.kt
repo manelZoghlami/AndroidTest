@@ -1,8 +1,9 @@
 package com.example.androidtest.ui.weatherCity
 
 import com.example.androidtest.R
+import com.example.domainlayer.models.CurrentWeather
 import com.example.domainlayer.models.WeatherCity
-
+internal fun CurrentWeather.toCurrentWeatherUI() = CurrentWeatherUI(name = name, temp = temp, weatherCityUI = weatherCity.toUi())
 internal fun WeatherCity.toUi() = WeatherCityUI(main = main, description = description, iconResId = icon.toIcon())
 fun String.toIcon() = when {
     this == "01d" -> R.drawable.d
