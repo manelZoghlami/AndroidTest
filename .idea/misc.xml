@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1331521739130435" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.149" />
+        <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.117" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1515625" />
         <entry key="app/src/main/res/layout/fragment_add_city.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_city_list.xml" value="0.12135416666666667" />
         <entry key="app/src/main/res/layout/fragment_weather_city.xml" value="0.16614583333333333" />
-        <entry key="app/src/main/res/layout/item_city.xml" value="0.12135416666666667" />
+        <entry key="app/src/main/res/layout/item_city.xml" value="0.18" />
       </map>
     </option>
   </component>

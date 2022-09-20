@@ -7,7 +7,5 @@ import androidx.room.PrimaryKey
 data class CityEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val cityName: String,
-    val lat: Double,
-    val lng: Double
+    val cityName: String
 )

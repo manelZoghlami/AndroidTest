@@ -24,19 +24,20 @@ internal class CityAdapter : RecyclerView.Adapter<CityAdapter.CityViewHolder>() 
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
         holder.setIsRecyclable(false)
-        val cityList = cityList[position]
-        binding.cityName.text.toString()
-
-
-           }
+        val item = cityList[position]
+        binding.cityName.text = item.city.replaceFirstChar { it.uppercaseChar() }
+        holder.itemView.setOnClickListener {
+            listener?.onItemClicked(item.city)
+        }
+    }
 
     fun updateListener(listener: OnItemCityListClickedListener) {
         this.listener = listener
     }
 
-      class CityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    class CityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     interface OnItemCityListClickedListener {
-        fun onItemClicked()
+        fun onItemClicked(cityName: String)
     }
 }

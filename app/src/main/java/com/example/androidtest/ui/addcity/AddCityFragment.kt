@@ -9,7 +9,7 @@ import com.example.androidtest.databinding.FragmentAddCityBinding
 import com.example.androidtest.di.injector
 import javax.inject.Inject
 
-class AddCityFragment : Fragment() {
+open class AddCityFragment : Fragment() {
 
     @Inject lateinit var addCityViewModel: AddCityViewModel
     private lateinit var binding: FragmentAddCityBinding
@@ -31,7 +31,8 @@ class AddCityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         AddCityView(
             binding = binding,
-            viewModel = addCityViewModel)
+            viewModel = addCityViewModel,
+            goToBack = { activity?.onBackPressed() })
     }
     companion object {
         @JvmStatic

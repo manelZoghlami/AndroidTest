@@ -16,7 +16,7 @@ class WeatherCityFragment : Fragment() {
     private lateinit var binding: FragmentWeatherCityBinding
     @Inject
     lateinit var weatherCityViewModel: WeatherCityViewModel
-
+    private val ARG_CITY = "ARG_CITY"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector?.inject(this)
@@ -34,7 +34,7 @@ class WeatherCityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         WeatherCityView(binding = binding,
                         viewModel = weatherCityViewModel,
-                        name = arguments?.getString("city") ?:"",
+                        name = arguments?.getString(ARG_CITY) ?:"",
                         owner = viewLifecycleOwner)
 
     }
@@ -43,7 +43,7 @@ class WeatherCityFragment : Fragment() {
         fun newInstance(cityName: String) =
             WeatherCityFragment().apply {
                 arguments = Bundle().apply {
-                   putString("city", cityName)
+                   putString(ARG_CITY, cityName)
                 }
             }
     }

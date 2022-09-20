@@ -13,12 +13,7 @@ class CityViewModel(private val getAllCityUseCase: GetAllCityUseCase) : ViewMode
 
     private val cityList = MutableLiveData<List<CityUI>>()
     val state: LiveData<List<CityUI>> = cityList
-
-    init {
-        getAllCity()
-    }
-
-    private fun getAllCity() {
+    fun getAllCity() {
         CoroutineScope(Dispatchers.IO).launch {
             val list = getAllCityUseCase.invoke()
             withContext(Dispatchers.Main){

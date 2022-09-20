@@ -4,4 +4,5 @@
     <string name="login_error">Error logging you in. Try again</string>
     <string name="insertCity">Save your City </string>
     <string name="current_label">Current</string>
+    <string name="empty_list">The List of City is Empty Click on (+) to add a City</string>
 </resources>
